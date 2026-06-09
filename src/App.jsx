@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 const BOOKING_URL = 'https://sugaringbrazilianwax.com/book-now/';
 const INSTAGRAM_URL = 'https://www.instagram.com/sugaringbrazilianwax/';
