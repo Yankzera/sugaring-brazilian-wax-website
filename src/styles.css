@@ -904,7 +904,7 @@ main {
 
 .contact-layout {
   display: grid;
-  grid-template-columns: minmax(300px, 0.92fr) minmax(0, 1.08fr);
+  grid-template-columns: minmax(280px, 0.78fr) minmax(320px, 1fr);
   align-items: start;
   gap: 24px;
 }
@@ -953,7 +953,7 @@ main {
 }
 
 .contact-locations {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .closing-cta {
@@ -1114,9 +1114,12 @@ main {
   .testimonial-grid,
   .product-grid,
   .location-grid,
-  .contact-locations,
   .faq-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-locations {
+    grid-template-columns: 1fr;
   }
 
   .site-footer {
