@@ -204,6 +204,7 @@ function App() {
         <Page />
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }
@@ -279,7 +280,7 @@ function HomePage() {
           <img src={missionImage} alt="Before and after sugaring result" />
         </div>
       </Section>
-      <Section eyebrow="About Us" title="About Sugaring Brazilian Wax">
+      <Section eyebrow="About Us" title="About Sugaring Brazilian Wax" className="about-home-section">
         <div className="about-split">
           <img src={aboutImage} alt="Sugaring paste applied to skin" />
           <div className="about-copy">
@@ -774,8 +775,16 @@ function Footer() {
         <NavLink route="privacy" label="Privacy Policy" />
         <NavLink route="terms" label="Terms of Service" />
       </nav>
-      <a className="btn btn-primary" href="#/careers">Apply now to work with us!</a>
+      <a className="btn btn-primary footer-apply" href="#/careers">Apply now</a>
     </footer>
+  );
+}
+
+function BackToTop() {
+  return (
+    <button className="back-to-top" type="button" aria-label="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+      <span aria-hidden="true">↑</span>
+    </button>
   );
 }
 

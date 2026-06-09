@@ -75,9 +75,10 @@ ul {
   position: fixed;
   inset: 0 0 auto;
   z-index: 100;
-  display: flex;
+  display: grid;
+  grid-template-columns: 140px minmax(0, auto) 140px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
   min-height: 84px;
   padding: 16px clamp(18px, 4vw, 56px);
@@ -119,6 +120,7 @@ ul {
 
 .brand-image-only {
   gap: 0;
+  justify-self: center;
 }
 
 .bird {
@@ -150,9 +152,10 @@ ul {
 .nav {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
+  justify-self: center;
 }
 
 .nav a,
@@ -412,6 +415,14 @@ main {
 .section-heading {
   max-width: 800px;
   margin-bottom: 34px;
+}
+
+.about-home-section .section-heading {
+  max-width: none;
+}
+
+.about-home-section .section-heading h2 {
+  white-space: nowrap;
 }
 
 .section h2,
@@ -914,18 +925,22 @@ main {
 
 .site-footer {
   display: grid;
-  grid-template-columns: 1.2fr 1fr auto;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
   gap: 34px;
   padding: clamp(36px, 6vw, 70px) clamp(18px, 4vw, 56px);
   background:
     radial-gradient(circle at 14% 12%, rgba(249, 197, 197, 0.34), transparent 22rem),
     linear-gradient(180deg, var(--white), var(--blush));
   border-top: 1px solid var(--pink-soft);
+  text-align: center;
 }
 
 .site-footer nav {
-  display: grid;
-  gap: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 8px 18px;
+  flex-wrap: wrap;
 }
 
 .site-footer nav a {
@@ -933,10 +948,52 @@ main {
 }
 
 .footer-brand {
+  justify-content: center;
   margin-bottom: 14px;
 }
 
+.footer-apply {
+  width: auto;
+  min-width: 150px;
+  max-width: 100%;
+  padding-inline: 24px;
+  white-space: nowrap;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 120;
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  background: var(--black);
+  color: var(--white);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.back-to-top span {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  background: var(--charcoal);
+}
+
 @media (max-width: 1020px) {
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .menu-button {
     display: inline-flex;
   }
@@ -1003,6 +1060,10 @@ main {
     font-size: clamp(2.7rem, 16vw, 4.3rem);
   }
 
+  .about-home-section .section-heading h2 {
+    white-space: normal;
+  }
+
   .split,
   .media-split,
   .about-split,
@@ -1036,5 +1097,12 @@ main {
   .shop-toolbar {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .back-to-top {
+    right: 14px;
+    bottom: 14px;
+    width: 46px;
+    height: 46px;
   }
 }
