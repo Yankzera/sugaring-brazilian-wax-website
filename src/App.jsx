@@ -439,10 +439,9 @@ function AboutPage() {
             <li>Do Not Go Swimming. Wait at least 48 hours to swim in the beach or the pool after waxing. The chlorine in pool water can be harsh on sensitive skin as well, apart from the fact that swimming pools can carry bacteria that might unleash an infection.</li>
             <li>Do Not Work out for at least 12 hours, may sound extreme, but it is just a preventive measure. Sweat (and the bacteria that can thrive in sweaty skin), as well as friction, might cause more damage than good on your sensitized skin, so why take the chance? If you do work out, keep it light.</li>
           </ul>
-        </div>
-      </Section>
-      <Section eyebrow="Hygiene & Safety Standards" title="Your safety is always our first priority">
-        <div className="about-text-stack">
+
+          <h3>Hygiene & Safety Standards</h3>
+          <p><strong>Your safety is always our first priority.</strong></p>
           <ul>
             <li>Our salon is always clean and tidy with pleasant ambient music.</li>
             <li>Our esthetician is always wearing new gloves during any waxing procedure.</li>
