@@ -3,6 +3,7 @@ import logoImage from './assets/logo.png';
 import heroImage from './assets/banner-1.jpg';
 import aboutImage from './assets/about-img.jpg';
 import missionImage from './assets/mission-img.png';
+import missionAboutImage from './assets/mission-img-aboutus.png';
 
 const BOOKING_URL = 'https://sbwax.zenoti.com/webstoreNew/services';
 const INSTAGRAM_URL = 'https://www.instagram.com/sugaringbrazilianwax/';
@@ -391,35 +392,69 @@ function AboutPage() {
         image="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1800&q=80"
         className="about-page-hero"
       />
-      <Section title="Our Safety Standards - Waxing Safety">
-        <div className="content-columns">
-          <div>
-            <p>Clients should avoid waxing irritated skin, varicose veins, areas with rashes, Botox or collagen injections, areas waxed within the last 24 hours, around piercings, areas treated with salicylic or glycolic acids, areas treated with skin medications and recently exfoliated skin.</p>
-            <h3>Contraindications</h3>
-            <ul>
-              <li>High blood sugar.</li>
-              <li>Recent Accutane or skin medications.</li>
-              <li>Antibiotics.</li>
-              <li>Skin problems such as acne, eczema or psoriasis.</li>
-            </ul>
+      <Section eyebrow="Mission" title="Our Mission Statement" className="about-mission-section">
+        <div className="about-mission-layout">
+          <div className="about-mission-copy">
+            <p>The premier full-service Sugaring Brazilian Wax spa offers first-class services, top-quality products, and excellent customer care. To provide the most comfortable and the most effective natural waxing services to all our clients.</p>
           </div>
-          <div>
-            <h3>After-waxing care</h3>
-            <ul>
-              <li>Do not touch freshly waxed skin.</li>
-              <li>Avoid thick body butters and scented products.</li>
-              <li>Do not pick ingrown hairs.</li>
-              <li>Use only warm or cold showers for 48 hours.</li>
-              <li>Avoid tanning, swimming and exercise for the recommended time period.</li>
-            </ul>
-          </div>
+          <img src={missionAboutImage} alt="Sugaring Brazilian Wax spa mission" />
         </div>
       </Section>
-      <Section title="Hygiene & Safety Practices" className="soft">
-        <p className="lead">We maintain a clean environment with gloves and masks for estheticians, clean wax pots, disposable tools, sanitized tables and surfaces, hand sanitizer and contactless checkout.</p>
+      <Section eyebrow="Our Safety Standards" title="Waxing Safety" className="about-safety-section soft">
+        <div className="about-text-stack">
+          <p className="lead">Remember that a little prevention will go a long way to save you from some really annoying side effects which could ruin your perfect wax.</p>
+          <p>Even though our professional and licensed waxing technicians always follow the proper protocols and use high-quality products to prevent or minimize side effects, the client should always take proper care of his or her skin at home 24 to 48 hours before and after the treatment.</p>
+          <p>For example - going to the pool or using tight clothes right after a wax - could lead to uncomfortable and unwanted side effects.</p>
+
+          <h3>Do not wax</h3>
+          <ul>
+            <li>Irritated, inflamed, or open wounds.</li>
+            <li>Your legs, if you have varicose veins.</li>
+            <li>Any area that has a rash, recent scar tissue, skin graft, cold sore, mole, wart, or pimple.</li>
+            <li>Any part of your face or body where you have received Botox or collagen injections.</li>
+            <li>Anywhere that has been waxed within the last 24 hours.</li>
+            <li>Over or around body piercings.</li>
+            <li>Areas where you have recently used skin care products that contain salicylic acid, glycolic acid, and/or alpha hydroxyl acids of any kind.</li>
+            <li>If you have recently received aggressive exfoliation of the skin, such as microdermabrasion, dermabrasion, and/or chemical peels.</li>
+            <li>If you have taken or are using prescription medications, such as antibiotics, Accutane, topical ointments or creams (e.g., RetinA or Renova), and/or acne medication.</li>
+            <li>If you have lupus or AIDS or you are in cancer therapy getting chemotherapy or radiation.</li>
+            <li>If you have been in direct sunlight for a long period of time or in a tanning bed within the last 24 hours or your skin is sunburned.</li>
+          </ul>
+
+          <h3>Are you eligible for waxing? How do I know if wax is for me?</h3>
+          <p>How do I know if wax is for me? If you have any of the conditions below, notify your beautician immediately and be aware of the risks you take when waxing.</p>
+          <p>Here are some of the main contraindications:</p>
+          <p><strong>High blood sugar:</strong> when the hair is ripped out, a superficial layer of skin is removed, too, making the skin more vulnerable to environmental agents that could cause infection. Since high blood sugar can delay healing, the skin will be unprotected for longer.</p>
+          <p><strong>Skin medication:</strong> if it's been less than a year since you last took Accutane, you are not eligible for waxing. Other medication for acne must be discontinued at least three months prior to the waxing appointment. This medication can cause skin to over-exfoliate, increasing the risk of skin ripping or lifting.</p>
+          <p><strong>Antibiotics:</strong> taking antibiotics can sensitize the skin, making waxing not a good choice for you. Better you wait for the end of your treatment.</p>
+          <p><strong>Skin problems:</strong> if you suffer from acne, eczema, psoriasis or other skin issues, you should wait until they are in remission or avoid waxing altogether. Likewise, avoid waxing on scarred, irritated, injured or bruised skin.</p>
+
+          <h3>After Waxing</h3>
+          <ul>
+            <li>Do Not Touch Freshly Waxed Skin, always wash your hands before touching the waxing area for at least 24 hours.</li>
+            <li>Do Not Use thick body butters, heavily scented or colored body washes, sprays, lotions, or deodorants. Vaseline can clog your open pores and cause bumps, while fragrances or colorants can increase the risk for irritations on sensitive, freshly waxed skin.</li>
+            <li>Do Not Pick on Ingrown Hairs, leave them alone for at least 48 hours, then exfoliate the waxed area gently, focusing on the ingrowns. If exfoliation does not remove the ingrown, try a special ingrown hair serum.</li>
+            <li>Do Not have Hot Showers for at least 48 hours, only warm or cold showers.</li>
+            <li>Do not go tanning. Make sure to wait at least 48 hours before sun exposure if you don't want to run the risk of burns and scarring. If you want to tan after the first three days after treatment, wear at least SPF 15 protection.</li>
+            <li>Do Not Go Swimming. Wait at least 48 hours to swim in the beach or the pool after waxing. The chlorine in pool water can be harsh on sensitive skin as well, apart from the fact that swimming pools can carry bacteria that might unleash an infection.</li>
+            <li>Do Not Work out for at least 12 hours, may sound extreme, but it is just a preventive measure. Sweat (and the bacteria that can thrive in sweaty skin), as well as friction, might cause more damage than good on your sensitized skin, so why take the chance? If you do work out, keep it light.</li>
+          </ul>
+        </div>
       </Section>
-      <Section title="Company Information">
-        <p>Sugaring Brazilian Wax encourages clients to visit for the best Brazilian wax experience. The spa has served clients since 2022, and all estheticians are licensed, skilled professionals dedicated to comfort, precision and care.</p>
+      <Section eyebrow="Hygiene & Safety Standards" title="Your safety is always our first priority">
+        <div className="about-text-stack">
+          <ul>
+            <li>Our salon is always clean and tidy with pleasant ambient music.</li>
+            <li>Our esthetician is always wearing new gloves during any waxing procedure.</li>
+            <li>Our esthetician is always wearing a face mask inside the room.</li>
+            <li>Our wax pot is clean and the roller is cleaned and sanitized between clients.</li>
+            <li>Our staff disinfect and sanitize the tools after procedures.</li>
+            <li>All wax sticks are immediately thrown away after use. We never double-dipped in the wax pot!</li>
+            <li>Our wax table is sanitized with disinfectant wipes after each guest and covered with a fresh and new sheet of table paper.</li>
+            <li>Hand sanitizer is available for you to use before we begin your appointment. We have a contactless checkout.</li>
+            <li>All surfaces are sanitized and cleaned in between each appointment for your safety.</li>
+          </ul>
+        </div>
       </Section>
       <ContactCTA />
     </>
