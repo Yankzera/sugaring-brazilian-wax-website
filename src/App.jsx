@@ -190,8 +190,6 @@ function App() {
           <NavLink route="products" label="Products" />
           <NavLink route="locations" label="Locations" />
           <a href={BOOKING_URL} target="_blank" rel="noreferrer">Book Now</a>
-          <NavLink route="privacy" label="Privacy Policy" />
-          <NavLink route="terms" label="Terms" />
         </nav>
       </header>
       <main>
