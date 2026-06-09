@@ -4,7 +4,7 @@ import heroImage from './assets/banner-1.jpg';
 import aboutImage from './assets/about-img.jpg';
 import missionImage from './assets/mission-img.png';
 
-const BOOKING_URL = 'https://sugaringbrazilianwax.com/book-now/';
+const BOOKING_URL = 'https://sbwax.zenoti.com/webstoreNew/services';
 const INSTAGRAM_URL = 'https://www.instagram.com/sugaringbrazilianwax/';
 const EMAIL = 'info@sugaringbrazilianwax.com';
 
