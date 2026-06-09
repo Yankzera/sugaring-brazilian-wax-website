@@ -217,9 +217,9 @@ function isServicesRoute(route) {
   return ['services', 'body-sculpting', 'lymphatic-drainage', 'eyebrow-lamination', 'vajacial'].includes(route);
 }
 
-function Hero({ eyebrow, title, text, image, children }) {
+function Hero({ eyebrow, title, text, image, children, className = '' }) {
   return (
-    <section className="hero">
+    <section className={`hero ${className}`}>
       <img src={image} alt="" className="hero-image" />
       <div className="hero-overlay" />
       <div className="hero-content">
@@ -389,6 +389,7 @@ function AboutPage() {
         title="About Us - Welcome To Our Premier Sugaring Brazilian Wax Spa"
         text="A full-service sugaring spa with first-class services, top-quality products and excellent customer care."
         image="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1800&q=80"
+        className="about-page-hero"
       />
       <Section title="Our Safety Standards - Waxing Safety">
         <div className="content-columns">
@@ -733,6 +734,9 @@ function ContactCTA() {
   return (
     <Section eyebrow="Contact us" title="Plan your visit" className="contact-section">
       <div className="contact-layout">
+        <div className="location-grid contact-locations">
+          {locations.map(location => <LocationCard key={location.name} location={location} />)}
+        </div>
         <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
           <label>
             <span>Full Name*</span>
@@ -752,9 +756,6 @@ function ContactCTA() {
           </label>
           <button className="btn btn-primary" type="submit">Submit Now</button>
         </form>
-        <div className="location-grid contact-locations">
-          {locations.map(location => <LocationCard key={location.name} location={location} />)}
-        </div>
       </div>
     </Section>
   );
