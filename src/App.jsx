@@ -1,4 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import logoImage from './assets/logo.png';
+import heroImage from './assets/banner-1.jpg';
+import aboutImage from './assets/about-img.jpg';
+import missionImage from './assets/mission-img.png';
 
 const BOOKING_URL = 'https://sugaringbrazilianwax.com/book-now/';
 const INSTAGRAM_URL = 'https://www.instagram.com/sugaringbrazilianwax/';
@@ -72,6 +76,7 @@ const routes = {
   vajacial: { label: 'Vajacial Treatment', title: 'Vajacial Treatment' },
   products: { label: 'Products', title: 'Products' },
   locations: { label: 'Locations', title: 'Locations' },
+  careers: { label: 'Careers', title: 'Careers' },
   privacy: { label: 'Privacy Policy', title: 'Privacy Policy' },
   terms: { label: 'Terms of Service', title: 'Terms of Service' },
 };
@@ -147,7 +152,10 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handler = () => setRoute(getRoute());
+    const handler = () => {
+      setRoute(getRoute());
+      setMenuOpen(false);
+    };
     window.addEventListener('hashchange', handler);
     return () => window.removeEventListener('hashchange', handler);
   }, []);
@@ -162,6 +170,7 @@ function App() {
     vajacial: VajacialPage,
     products: ProductsPage,
     locations: LocationsPage,
+    careers: CareersPage,
     privacy: PrivacyPage,
     terms: TermsPage,
   }[route] || HomePage), [route]);
@@ -169,9 +178,8 @@ function App() {
   return (
     <>
       <header className="site-header">
-        <a className="brand" href="#/home" onClick={() => setMenuOpen(false)}>
-          <Hummingbird small />
-          <span>Sugaring Brazilian Wax</span>
+        <a className="brand brand-image-only" href="#/home" onClick={() => setMenuOpen(false)} aria-label="Sugaring Brazilian Wax home">
+          <img className="brand-logo" src={logoImage} alt="Sugaring Brazilian Wax" />
         </a>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>Menu</button>
         <nav className={menuOpen ? 'nav nav-open' : 'nav'}>
@@ -252,39 +260,43 @@ function HomePage() {
     <>
       <Hero
         eyebrow="Natural beauty and client comfort"
-        title="book Sugaring Brazilian Wax services"
+        title="Book Sugaring Brazilian Wax services"
         text="Always be prepared for the special moments in life!"
-        image="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1800&q=80"
+        image={heroImage}
       >
         <HashButton route="services">View Our Services</HashButton>
       </Hero>
       <Section eyebrow="Mission" title="Mission - Our Mission Statement">
-        <div className="split">
-          <p>
-            Our spa provides first-class services, top-quality products and excellent customer care.
-            Our goal is to offer the most comfortable and effective natural sugaring wax services in
-            a friendly, professional setting focused on wellness and confidence.
-          </p>
-          <HashButton route="about" variant="outline">Read more</HashButton>
+        <div className="media-split">
+          <div className="mission-copy">
+            <p>
+              Our spa provides first-class services, top-quality products and excellent customer care.
+              Our goal is to offer the most comfortable and effective natural sugaring wax services in
+              a friendly, professional setting focused on wellness and confidence.
+            </p>
+            <HashButton route="about" variant="outline">Read more</HashButton>
+          </div>
+          <img src={missionImage} alt="Before and after sugaring result" />
         </div>
       </Section>
-      <Section eyebrow="About" title="Smooth, soft and healthy skin">
-        <div className="feature-grid">
-          <article>
-            <SpaIcon type="sparkle" />
-            <h3>Look no further</h3>
-            <p>If having smooth, soft and healthy skin in an inexpensive way has been what you are looking for, look no further. Tired of stubble and razor bumps? You have come to the perfect place.</p>
-          </article>
-          <article>
-            <SpaIcon type="leaf" />
-            <h3>What sugaring is</h3>
-            <p>Sugaring is a natural technique made from lemon juice, water and sugar. The paste is applied opposite hair growth and removed in the direction of hair growth.</p>
-          </article>
-          <article>
-            <SpaIcon type="drop" />
-            <h3>Gentler and hygienic</h3>
-            <p>Because sugar paste adheres to hair and dead skin cells, it is gentler than traditional waxing and supports a cleaner, more comfortable experience.</p>
-          </article>
+      <Section eyebrow="About Us" title="About Sugaring Brazilian Wax">
+        <div className="about-split">
+          <img src={aboutImage} alt="Sugaring paste applied to skin" />
+          <div className="about-copy">
+            <p>If having smooth, soft, and healthy skin in an inexpensive way has been what you're looking for, look no further.</p>
+            <p>Tired of stubble and razor bumps? You have come to the perfect place.</p>
+
+            <h3>What's the difference between sugaring and waxing?</h3>
+            <p>Sugaring is an all-natural, ancient technique for removing unwanted body hair. It was first developed in Egypt and has been used in various forms throughout the world for centuries.</p>
+            <p>Sugar paste is made from a mixture of lemon juice, water, and sugar, which is boiled at high temperatures to create a thick but pliable substance. This paste is then applied in the opposite direction of hair growth, then quickly removed in the direction of hair growth. The result? A smoother, more gentle waxing experience that leaves skin soft and moisturized.</p>
+
+            <h3>Why choose sugaring over traditional waxing?</h3>
+            <p>While both are effective methods of hair removal, sugar paste is gentler on the skin than traditional hard and soft waxes because it doesn't adhere to live skin cells like traditional wax. It only sticks to dead skin cells and unwanted hair, resulting in less discomfort during removal. Plus, since there are no resins or chemicals added to sugar paste, it's all-natural and more sanitary than other waxes.</p>
+
+            <h3>Benefits of sugaring versus traditional waxing</h3>
+            <p>Sugaring is a natural hair removal treatment that has been around for centuries. It is a mixture of lemon, water, and sugar heated to the perfect temperature, applied to the skin, and removed in the opposite direction of hair growth.</p>
+            <p>Waxing uses harsh chemicals that can irritate the skin. Sugaring is all-natural and improves the quality of the skin over time. The sugaring paste used with this method only sticks to the hair and dead skin cells, not live skin cells. Therefore it only removes unwanted hair, not healthy skin. Sugaring is much more gentle on the skin. Waxing can tear at the hair follicle when removing hair causing breakage mid-shaft and ingrown hairs to form underneath your skin.</p>
+          </div>
         </div>
       </Section>
       <ServicesPreview />
@@ -611,6 +623,28 @@ function LocationsPage() {
   );
 }
 
+function CareersPage() {
+  return (
+    <>
+      <PageTitle title="Careers at Sugaring Brazilian Wax" breadcrumb="Home / Careers" />
+      <Section title="Apply now to work with us">
+        <div className="content-columns">
+          <div>
+            <p className="lead">Join a licensed spa team focused on professional service, client comfort and clean beauty standards in Tampa and St. Petersburg.</p>
+          </div>
+          <div className="card career-card">
+            <SpaIcon type="sparkle" />
+            <h3>Send your application</h3>
+            <p>Tell us about your esthetics experience, preferred location and availability.</p>
+            <a className="btn btn-primary" href={`mailto:${EMAIL}?subject=Sugaring Brazilian Wax Career Application`}>Apply by email</a>
+          </div>
+        </div>
+      </Section>
+      <ContactCTA />
+    </>
+  );
+}
+
 function PrivacyPage() {
   return (
     <>
@@ -726,7 +760,7 @@ function Footer() {
     <footer className="site-footer">
       <div>
         <a className="brand footer-brand" href="#/home">
-          <Hummingbird small />
+          <img className="brand-logo" src={logoImage} alt="" />
           <span>Sugaring Brazilian Wax</span>
         </a>
         <p>Friendly, professional care for natural beauty, wellness and client comfort.</p>
