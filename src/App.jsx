@@ -183,20 +183,20 @@ function App() {
         </a>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>Menu</button>
         <nav className={menuOpen ? 'nav nav-open' : 'nav'}>
-          <NavLink route="home" label="Home" />
-          <NavLink route="about" label="About Us" />
+          <NavLink route="home" label="Home" currentRoute={route} />
+          <NavLink route="about" label="About Us" currentRoute={route} />
           <div className="nav-group">
-            <button onClick={() => go('services')}>Services</button>
+            <button className={isServicesRoute(route) ? 'active' : ''} onClick={() => go('services')}>Services</button>
             <div className="nav-dropdown">
-              <NavLink route="services" label="All Services" />
-              <NavLink route="body-sculpting" label="Body Sculpting" />
-              <NavLink route="lymphatic-drainage" label="Lymphatic Massage" />
-              <NavLink route="eyebrow-lamination" label="Eyebrow Lamination" />
-              <NavLink route="vajacial" label="Vajacial Treatment" />
+              <NavLink route="services" label="All Services" currentRoute={route} />
+              <NavLink route="body-sculpting" label="Body Sculpting" currentRoute={route} />
+              <NavLink route="lymphatic-drainage" label="Lymphatic Massage" currentRoute={route} />
+              <NavLink route="eyebrow-lamination" label="Eyebrow Lamination" currentRoute={route} />
+              <NavLink route="vajacial" label="Vajacial Treatment" currentRoute={route} />
             </div>
           </div>
-          <NavLink route="products" label="Products" />
-          <NavLink route="locations" label="Locations" />
+          <NavLink route="products" label="Products" currentRoute={route} />
+          <NavLink route="locations" label="Locations" currentRoute={route} />
           <a href={BOOKING_URL} target="_blank" rel="noreferrer">Book Now</a>
         </nav>
       </header>
@@ -209,8 +209,12 @@ function App() {
   );
 }
 
-function NavLink({ route, label }) {
-  return <a href={`#/${route}`}>{label}</a>;
+function NavLink({ route, label, currentRoute }) {
+  return <a className={currentRoute === route ? 'active' : ''} href={`#/${route}`}>{label}</a>;
+}
+
+function isServicesRoute(route) {
+  return ['services', 'body-sculpting', 'lymphatic-drainage', 'eyebrow-lamination', 'vajacial'].includes(route);
 }
 
 function Hero({ eyebrow, title, text, image, children }) {
@@ -351,7 +355,7 @@ function Testimonials() {
     ['Breanna H.', 'St. Petersburg, FL', 'My esthetician was professional, kind and gave great advice on preventing ingrown hairs.'],
   ];
   return (
-    <Section eyebrow="Testimonials" title="What Our Clients Are Saying">
+    <Section eyebrow="Testimonials" title="What Our Clients Are Saying" className="testimonials-section">
       <div className="testimonial-grid">
         {items.map(([name, city, quote]) => (
           <blockquote className="testimonial" key={name}>
@@ -728,8 +732,29 @@ function ClosingCTA({ text }) {
 function ContactCTA() {
   return (
     <Section eyebrow="Contact us" title="Plan your visit" className="contact-section">
-      <div className="location-grid">
-        {locations.map(location => <LocationCard key={location.name} location={location} />)}
+      <div className="contact-layout">
+        <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
+          <label>
+            <span>Full Name*</span>
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            <span>Phone Number*</span>
+            <input type="tel" name="phone" required />
+          </label>
+          <label>
+            <span>Email Address*</span>
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" />
+          </label>
+          <button className="btn btn-primary" type="submit">Submit Now</button>
+        </form>
+        <div className="location-grid contact-locations">
+          {locations.map(location => <LocationCard key={location.name} location={location} />)}
+        </div>
       </div>
     </Section>
   );
@@ -775,7 +800,7 @@ function Footer() {
         <NavLink route="privacy" label="Privacy Policy" />
         <NavLink route="terms" label="Terms of Service" />
       </nav>
-      <a className="btn btn-primary footer-apply" href="#/careers">Apply now</a>
+      <a className="btn btn-primary footer-apply" href={BOOKING_URL} target="_blank" rel="noreferrer">Apply now</a>
     </footer>
   );
 }
