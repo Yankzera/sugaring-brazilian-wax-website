@@ -4,6 +4,7 @@ import heroImage from './assets/banner-1.jpg';
 import aboutImage from './assets/about-img.jpg';
 import missionImage from './assets/mission-img.png';
 import missionAboutImage from './assets/mission-img-aboutus.png';
+import companyImage from './assets/our-company-img.png';
 
 const BOOKING_URL = 'https://sbwax.zenoti.com/webstoreNew/services';
 const INSTAGRAM_URL = 'https://www.instagram.com/sugaringbrazilianwax/';
@@ -453,6 +454,47 @@ function AboutPage() {
             <li>Hand sanitizer is available for you to use before we begin your appointment. We have a contactless checkout.</li>
             <li>All surfaces are sanitized and cleaned in between each appointment for your safety.</li>
           </ul>
+        </div>
+      </Section>
+      <Section eyebrow="Company" title="Our Company" className="about-company-section">
+        <div className="about-company-layout">
+          <img src={companyImage} alt="Sugaring Brazilian Wax company" />
+          <div className="about-text-stack">
+            <p>At Sugaring Brazilian Wax, we encourage you to come into our spa and let us give you the best Brazilian Wax experience ever. Our Brazilian Waxing includes just about everything that needs to be removed. We have been providing exceptional service to our clientele since 2022.</p>
+            <p>All our estheticians are licensed, and skilled professionals, who have been working in the business for years. Don't think or worry about any pain, because we are here to please serve you. So come see us, let us give you a little pampering at Sugaring Brazilian Wax.</p>
+            <p>Reasons to choose Sugaring Brazilian Wax - we do not recycle wax, no double-dipping, and offer a quality service in a clean and fresh environment using entirely disposable products. After you have had sugaring done by Sugaring Brazilian Wax, we promise and guarantee you'll be leaving with flawless skin and a smile.</p>
+            <p>Sugar waxing is free of chemical additives, artificial ingredients, and raw sugar cane. It is a natural product that will not burn or irritate your skin. The sugar paste is applied in the opposite direction of the hair growth to pull out the hair follicle from its root. The sugar paste only adheres to dead skin cells, and therefore, it does not break or tear the skin upon removal.</p>
+            <p>The Sugaring Brazilian Wax is very safe for all skin types, including sensitive areas such as your bikini zone, face, underarms, etc. As a bonus, it doesn't leave behind any sticky residue as other products do, and there's no need to use strips to remove it!</p>
+            <p>Are you ready for an ouch-free Sugaring Brazilian wax? Our certified estheticians are ready to help!</p>
+
+            <h3>Our Scheduling Policy</h3>
+            <h3>Scheduling Policy</h3>
+            <p>Online booking via the web or on the app is the quickest and easiest way to make an appointment. You are free to call and text anytime. Messages will be answered as soon as possible.</p>
+            <p>When scheduling your first appointment, a valid credit card number on file is required. This is for the purpose of our cancellation/ no show policies. You may also use this card on file to pay for deposits and at checkout.</p>
+            <p>If you are having trouble finding enough time available for the services you would like, that probably means we are booked. Multiple services may be condensed and they vary for each client so please reach out so we can get you set up for the right amount of time and find a spot for you.</p>
+            <p>We understand that life gets busy and unexpected things can come up. We value each and every one of our clients and want to be as accommodating as possible. Because of our high demand for appointment requests and to allow us to accommodate everyone, we have a few simple requests that we have to put into place to respect the business, and the service providers time as well as your time.</p>
+
+            <h3>Cancellation Policy</h3>
+            <p>Kindly give us a 24-48 hour notice for rescheduling/cancellations. Your time slot is reserved just for you and may not be able to be filled when you cancel.</p>
+            <p>No shows or missed appointments will be a fee of 50% of the services missed. Your credit card will be charged the fee at time of cancellation.</p>
+
+            <h3>No Show Policy:</h3>
+            <p>No-shows: Missed appointments will be a fee 50% of scheduled services and charged accordingly.</p>
+
+            <h3>Confirmations:</h3>
+            <p>Please confirm your appointment when you receive the confirmation text. Each client receives a confirmation via text 48 hours prior that you will be able to click on to confirm your services. Any services that you no longer would like should be canceled at that time to free up the time for someone else.</p>
+
+            <h3>Late Appointments:</h3>
+            <p>We make every consideration to accommodate our clients if they are late. Please keep in mind that we book appointments in 30 minute increments. Depending on the service, we cannot accommodate our clients that are over 10 minutes late for a 30 minutes time slot. If you have multiple services, we may not be able to complete all of them and your appointment may have to be rescheduled. We understand things happen in life like traffic, kids, jobs etc., but please allow ample time to make your appointment time.</p>
+
+            <h3>Scheduling Etiquette:</h3>
+            <p>Please understand that when you forget or cancel your appointment without giving enough notice, we miss the opportunity to receive services.</p>
+            <p>We strive to get you the time slot for the services you desire, so we always appreciate our clients booking ahead. That way we can guarantee you get waxed when you need to be.</p>
+            <p>Despite our reminders, it is ultimately your responsibility to remember appointment dates and times to avoid tardy/missed appointments, and being charged according to our policy.</p>
+
+            <h3>Pricing:</h3>
+            <p><em>*Pricing subject to change at any time without notice*</em></p>
+          </div>
         </div>
       </Section>
       <ContactCTA />

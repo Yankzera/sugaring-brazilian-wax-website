@@ -591,6 +591,24 @@ main {
   max-width: 980px;
 }
 
+.about-company-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.45fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(24px, 5vw, 58px);
+}
+
+.about-company-layout > img {
+  position: sticky;
+  top: 112px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius);
+  background: var(--blush);
+  box-shadow: var(--shadow-soft);
+  object-fit: cover;
+}
+
 .feature-grid,
 .card-grid,
 .testimonial-grid,
@@ -1207,6 +1225,7 @@ main {
   .media-split,
   .about-split,
   .about-mission-layout,
+  .about-company-layout,
   .contact-layout,
   .content-columns,
   .service-row,
@@ -1218,6 +1237,10 @@ main {
   .about-split > img {
     position: static;
     aspect-ratio: 1 / 0.86;
+  }
+
+  .about-company-layout > img {
+    position: static;
   }
 
   .feature-grid,
