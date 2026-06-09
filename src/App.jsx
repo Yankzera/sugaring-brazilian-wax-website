@@ -96,6 +96,52 @@ function Hummingbird({ small = false }) {
   );
 }
 
+function SpaIcon({ type = 'sparkle' }) {
+  const icons = {
+    sparkle: (
+      <>
+        <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z" />
+        <path d="M19 16l.8 2.7L22.5 19l-2.7.8L19 22.5l-.8-2.7-2.7-.8 2.7-.8L19 16Z" />
+      </>
+    ),
+    leaf: (
+      <>
+        <path d="M20.5 3.5C12 4 5 9.8 4 18.5c8.8-1 14.5-8 16.5-15Z" />
+        <path d="M4 18.5c4.8-5.7 9.2-8.9 16.5-15" />
+      </>
+    ),
+    drop: (
+      <path d="M12 2.5S5.5 10 5.5 15.2a6.5 6.5 0 0 0 13 0C18.5 10 12 2.5 12 2.5Z" />
+    ),
+    mask: (
+      <>
+        <path d="M5 8.5c4.2-2.7 9.8-2.7 14 0v4.2c0 4.1-3.1 7.3-7 7.3s-7-3.2-7-7.3V8.5Z" />
+        <path d="M8.8 12.2h.1M15.1 12.2h.1M9.5 16c1.5 1.1 3.5 1.1 5 0" />
+      </>
+    ),
+    wax: (
+      <>
+        <path d="M8 3h8l1 5H7l1-5Z" />
+        <path d="M7 8h10v10a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V8Z" />
+        <path d="M10 12h4" />
+      </>
+    ),
+    massage: (
+      <>
+        <path d="M4 15c3-4.5 7.3-5.8 13-4" />
+        <path d="M7 19c2.8-3.2 6.5-4.2 11-3" />
+        <path d="M9 8a3 3 0 1 1 6 0" />
+      </>
+    ),
+  };
+
+  return (
+    <svg className="spa-icon" viewBox="0 0 24 24" aria-hidden="true">
+      {icons[type] || icons.sparkle}
+    </svg>
+  );
+}
+
 function App() {
   const [route, setRoute] = useState(getRoute());
   const [menuOpen, setMenuOpen] = useState(false);
@@ -169,6 +215,11 @@ function Hero({ eyebrow, title, text, image, children }) {
         <div className="eyebrow">{eyebrow}</div>
         <h1>{title}</h1>
         <p>{text}</p>
+        <div className="hero-badges">
+          <span><SpaIcon type="leaf" /> Natural sugaring</span>
+          <span><SpaIcon type="sparkle" /> Licensed estheticians</span>
+          <span><SpaIcon type="drop" /> Comfort-first care</span>
+        </div>
         <div className="button-row">
           <BookButton />
           {children}
@@ -222,15 +273,17 @@ function HomePage() {
       <Section eyebrow="About" title="Smooth, soft and healthy skin">
         <div className="feature-grid">
           <article>
-            <Hummingbird />
+            <SpaIcon type="sparkle" />
             <h3>Look no further</h3>
             <p>If having smooth, soft and healthy skin in an inexpensive way has been what you are looking for, look no further. Tired of stubble and razor bumps? You have come to the perfect place.</p>
           </article>
           <article>
+            <SpaIcon type="leaf" />
             <h3>What sugaring is</h3>
             <p>Sugaring is a natural technique made from lemon juice, water and sugar. The paste is applied opposite hair growth and removed in the direction of hair growth.</p>
           </article>
           <article>
+            <SpaIcon type="drop" />
             <h3>Gentler and hygienic</h3>
             <p>Because sugar paste adheres to hair and dead skin cells, it is gentler than traditional waxing and supports a cleaner, more comfortable experience.</p>
           </article>
@@ -260,9 +313,20 @@ function ServicesPreview() {
 }
 
 function ServiceMini({ title, text }) {
+  const iconMap = {
+    Sugaring: 'leaf',
+    'High Frequency': 'sparkle',
+    Vajacial: 'mask',
+    'Cocoa Wax': 'wax',
+    'Hydrojelly Mask': 'drop',
+    'Ear Waxing': 'wax',
+    'Full Legs Wax': 'sparkle',
+    'Chest Waxing': 'massage',
+  };
+
   return (
     <article className="card service-mini">
-      <Hummingbird small />
+      <SpaIcon type={iconMap[title] || 'sparkle'} />
       <h3>{title}</h3>
       <p>{text}</p>
     </article>
@@ -362,11 +426,16 @@ function ServicesPage() {
         <div className="service-list">
           {detailedServices.map(([name, summary]) => (
             <article className="service-row" key={name}>
-              <div>
-                <h3>{name}</h3>
-                <p>{summary}</p>
+              <div className="service-row-content">
+                <SpaIcon type={serviceIcon(name)} />
+                <div>
+                  <h3>{name}</h3>
+                  <p>{summary}</p>
+                </div>
               </div>
-              <BookButton />
+              <div>
+                <BookButton />
+              </div>
             </article>
           ))}
         </div>
@@ -484,6 +553,7 @@ function FAQ({ items }) {
       <div className="faq-grid">
         {items.map(([q, a]) => (
           <article className="faq" key={q}>
+            <SpaIcon type="sparkle" />
             <h3>{q}</h3>
             <p>{a}</p>
           </article>
@@ -635,6 +705,7 @@ function ContactCTA() {
 function LocationCard({ location }) {
   return (
     <article className="location-card">
+      <SpaIcon type="drop" />
       <h3>{location.name}</h3>
       <ul>{location.hours.map(hour => <li key={hour}>{hour}</li>)}</ul>
       <p>{location.address}</p>
@@ -643,6 +714,13 @@ function LocationCard({ location }) {
       <BookButton>Book Now!</BookButton>
     </article>
   );
+}
+
+function serviceIcon(name) {
+  if (/vajacial|bikini|underarm/i.test(name)) return 'mask';
+  if (/leg|arm|shoulder|chest|back|stomach|neck/i.test(name)) return 'massage';
+  if (/lip|chin|sideburn|nose|ear|hands|feet/i.test(name)) return 'wax';
+  return 'leaf';
 }
 
 function Footer() {
