@@ -5,14 +5,14 @@ import aboutImage from './assets/about-img.jpg';
 import missionImage from './assets/mission-img.png';
 import missionAboutImage from './assets/mission-img-aboutus.png';
 import companyImage from './assets/our-company-img.png';
-import brownSugarCoffeeScrub from './assets/BROWN SUGAR COFFEE EXFOLIATING SUGAR SCRUB.png';
-import caribbeanCoconutScrub from './assets/CARIBBEAN COCONUT EXFOLIATING SUGAR SCRUB.png';
-import lavenderScrub from './assets/LAVENDER EXFOLIATING SUGAR SCRUB.png';
-import mangoGrapefruitScrub from './assets/MANGO GRAPEFRUIT EXFOLIATING SUGAR SCRUB.png';
-import pfbVanishChromabright from './assets/PFB Vanish Chromabright.png';
-import pfbVanish from './assets/PFB Vanish.png';
-import rosemaryMintScrub from './assets/ROSEMARY MINT EXFOLIATING SUGAR SCRUB.png';
-import sensitiveSkinScrub from './assets/SENSITIVE SKIN EXFOLIATING SUGAR SCRUB.png';
+import brownSugarCoffeeScrub from './assets/BROWN SUGAR COFFEE EXFOLIATING SUGAR SCRUB.webp';
+import caribbeanCoconutScrub from './assets/CARIBBEAN COCONUT EXFOLIATING SUGAR SCRUB.webp';
+import lavenderScrub from './assets/LAVENDER EXFOLIATING SUGAR SCRUB.webp';
+import mangoGrapefruitScrub from './assets/MANGO GRAPEFRUIT EXFOLIATING SUGAR SCRUB.webp';
+import pfbVanishChromabright from './assets/PFB Vanish Chromabright.webp';
+import pfbVanish from './assets/PFB Vanish.webp';
+import rosemaryMintScrub from './assets/ROSEMARY MINT EXFOLIATING SUGAR SCRUB.webp';
+import sensitiveSkinScrub from './assets/SENSITIVE SKIN EXFOLIATING SUGAR SCRUB.webp';
 
 const BOOKING_URL = 'https://sbwax.zenoti.com/webstoreNew/services';
 const INSTAGRAM_URL = 'https://www.instagram.com/sugaringbrazilianwax/';
@@ -788,7 +788,7 @@ function ProductsPage() {
         <div className="product-grid">
           {products.map(product => (
             <article className="product-card" key={product.slug}>
-              <img src={product.image} alt={product.name} />
+              <img src={product.image} alt={product.name} loading="lazy" decoding="async" />
               <div>
                 <span className="category">Beauty Products</span>
                 <h3>{product.name}</h3>
@@ -811,7 +811,7 @@ function ProductDetailPage({ product }) {
     <>
       <section className="product-detail-hero">
         <div className="product-detail-media">
-          <img src={product.image} alt={product.name} />
+          <img src={product.image} alt={product.name} decoding="async" fetchPriority="high" />
         </div>
         <div className="product-detail-summary">
           <span className="eyebrow">Beauty Products</span>
