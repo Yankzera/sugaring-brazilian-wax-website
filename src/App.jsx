@@ -402,7 +402,7 @@ function AboutPage() {
         </div>
       </Section>
       <Section eyebrow="Our Safety Standards" title="Waxing Safety" className="about-safety-section soft">
-        <div className="about-text-stack">
+        <div className="about-text-stack about-panel">
           <p className="lead">Remember that a little prevention will go a long way to save you from some really annoying side effects which could ruin your perfect wax.</p>
           <p>Even though our professional and licensed waxing technicians always follow the proper protocols and use high-quality products to prevent or minimize side effects, the client should always take proper care of his or her skin at home 24 to 48 hours before and after the treatment.</p>
           <p>For example - going to the pool or using tight clothes right after a wax - could lead to uncomfortable and unwanted side effects.</p>
@@ -459,7 +459,7 @@ function AboutPage() {
       <Section eyebrow="Company" title="Our Company" className="about-company-section">
         <div className="about-company-layout">
           <img src={companyImage} alt="Sugaring Brazilian Wax company" />
-          <div className="about-text-stack">
+          <div className="about-text-stack about-panel about-company-copy">
             <p>At Sugaring Brazilian Wax, we encourage you to come into our spa and let us give you the best Brazilian Wax experience ever. Our Brazilian Waxing includes just about everything that needs to be removed. We have been providing exceptional service to our clientele since 2022.</p>
             <p>All our estheticians are licensed, and skilled professionals, who have been working in the business for years. Don't think or worry about any pain, because we are here to please serve you. So come see us, let us give you a little pampering at Sugaring Brazilian Wax.</p>
             <p>Reasons to choose Sugaring Brazilian Wax - we do not recycle wax, no double-dipping, and offer a quality service in a clean and fresh environment using entirely disposable products. After you have had sugaring done by Sugaring Brazilian Wax, we promise and guarantee you'll be leaving with flawless skin and a smile.</p>

@@ -537,10 +537,18 @@ main {
 }
 
 .about-mission-layout {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 0.86fr) minmax(280px, 0.62fr);
   align-items: center;
   gap: clamp(24px, 5vw, 58px);
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(255, 246, 246, 0.94), rgba(255, 255, 255, 0.92)),
+    var(--white);
+  box-shadow: var(--shadow-soft);
 }
 
 .about-mission-copy {
@@ -550,7 +558,8 @@ main {
 
 .about-mission-copy p {
   max-width: 760px;
-  font-size: 1.16rem;
+  color: var(--black);
+  font-size: clamp(1.16rem, 2vw, 1.38rem);
   line-height: 1.78;
 }
 
@@ -569,12 +578,33 @@ main {
   max-width: 980px;
 }
 
+.about-panel {
+  max-width: none;
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-soft);
+}
+
 .about-text-stack h3 {
-  margin-top: 20px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--pink-soft);
   color: var(--black);
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(1.45rem, 3vw, 2.1rem);
   line-height: 1.15;
+}
+
+.about-text-stack h3:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.about-panel > p {
+  max-width: 900px;
 }
 
 .about-text-stack strong {
@@ -584,11 +614,37 @@ main {
 .about-text-stack ul {
   display: grid;
   gap: 10px;
-  padding-left: 1.25rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.about-text-stack li {
+  position: relative;
+  padding: 13px 16px 13px 36px;
+  border: 1px solid rgba(249, 197, 197, 0.42);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 250, 0.98), rgba(255, 255, 255, 0.92));
+}
+
+.about-text-stack li::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 1.32em;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--pink-deep);
 }
 
 .about-safety-section .section-heading {
   max-width: 980px;
+}
+
+.about-safety-section .section-heading,
+.about-company-section .section-heading {
+  margin-bottom: 28px;
 }
 
 .about-company-layout {
@@ -602,11 +658,22 @@ main {
   position: sticky;
   top: 112px;
   width: 100%;
+  aspect-ratio: 0.92 / 1;
   border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: var(--radius);
   background: var(--blush);
   box-shadow: var(--shadow-soft);
   object-fit: cover;
+}
+
+.about-company-copy h3 + h3 {
+  margin-top: -8px;
+  padding-top: 0;
+  border-top: 0;
+  color: var(--pink-deep);
+  font-size: clamp(1.2rem, 2.3vw, 1.55rem);
+  font-family: "Nunito Sans", system-ui, sans-serif;
+  font-weight: 900;
 }
 
 .feature-grid,
