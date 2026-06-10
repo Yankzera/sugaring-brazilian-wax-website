@@ -662,7 +662,12 @@ function FAQ({ items }) {
 function ProductsPage() {
   return (
     <>
-      <PageTitle title="Products" breadcrumb="Home / Products" />
+      <Hero
+        eyebrow="Beauty Products"
+        title="Products for smoother, healthier skin"
+        text="Explore aftercare essentials selected to support exfoliation, hydration and smoother results between appointments."
+        image="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1800&q=80"
+      />
       <Section title="Showing all 8 results">
         <div className="shop-toolbar">
           <span>Beauty Products</span>
