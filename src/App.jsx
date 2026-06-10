@@ -894,7 +894,6 @@ function LocationsPage() {
           {locations.slice().reverse().map(location => <LocationCard key={location.name} location={location} />)}
         </div>
       </Section>
-      <ContactCTA />
     </>
   );
 }
