@@ -703,13 +703,22 @@ function ProductsPage() {
 function LocationsPage() {
   return (
     <>
-      <PageTitle title="Locations - St. Petersburg, FL and Tampa, FL" />
-      <Section title="Visit Sugaring Brazilian Wax">
-        <p className="lead">Hair removal can be tiring and embarrassing. Try Sugaring Brazilian Wax and enjoy a fast, effective method that boosts self-esteem. Available cities: St. Petersburg and Tampa.</p>
-        <div className="location-grid">
+      <Hero
+        eyebrow="Locations"
+        title="Visit us in St. Petersburg and Tampa"
+        text="Two convenient Florida locations for smooth, confidence-building sugaring and waxing care."
+        image="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1800&q=80"
+      />
+      <Section eyebrow="Locations" title="Visit Sugaring Brazilian Wax" className="locations-page-section">
+        <div className="locations-intro-panel about-panel">
+          <SpaIcon type="drop" />
+          <p className="lead">Hair removal can be tiring and embarrassing. Try Sugaring Brazilian Wax and enjoy a fast, effective method that boosts self-esteem. Available cities: St. Petersburg and Tampa.</p>
+        </div>
+        <div className="location-grid locations-page-grid">
           {locations.slice().reverse().map(location => <LocationCard key={location.name} location={location} />)}
         </div>
       </Section>
+      <ContactCTA />
     </>
   );
 }
