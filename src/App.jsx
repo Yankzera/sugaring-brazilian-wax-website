@@ -5,6 +5,14 @@ import aboutImage from './assets/about-img.jpg';
 import missionImage from './assets/mission-img.png';
 import missionAboutImage from './assets/mission-img-aboutus.png';
 import companyImage from './assets/our-company-img.png';
+import brownSugarCoffeeScrub from './assets/BROWN SUGAR COFFEE EXFOLIATING SUGAR SCRUB.png';
+import caribbeanCoconutScrub from './assets/CARIBBEAN COCONUT EXFOLIATING SUGAR SCRUB.png';
+import lavenderScrub from './assets/LAVENDER EXFOLIATING SUGAR SCRUB.png';
+import mangoGrapefruitScrub from './assets/MANGO GRAPEFRUIT EXFOLIATING SUGAR SCRUB.png';
+import pfbVanishChromabright from './assets/PFB Vanish Chromabright.png';
+import pfbVanish from './assets/PFB Vanish.png';
+import rosemaryMintScrub from './assets/ROSEMARY MINT EXFOLIATING SUGAR SCRUB.png';
+import sensitiveSkinScrub from './assets/SENSITIVE SKIN EXFOLIATING SUGAR SCRUB.png';
 
 const BOOKING_URL = 'https://sbwax.zenoti.com/webstoreNew/services';
 const INSTAGRAM_URL = 'https://www.instagram.com/sugaringbrazilianwax/';
@@ -58,14 +66,14 @@ const detailedServices = [
 ];
 
 const products = [
-  ['Brown Sugar Coffee Exfoliating Sugar Scrub', '$18', 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=800&q=80'],
-  ['Caribbean Coconut Exfoliating Sugar Scrub', '$18', 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80'],
-  ['Lavender Exfoliating Sugar Scrub', '$18', 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80'],
-  ['Mango Grapefruit Exfoliating Sugar Scrub', '$18', 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80'],
-  ['PFB Vanish', '$28', 'https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&w=800&q=80'],
-  ['PFB Vanish + Chromabright', '$32', 'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=800&q=80'],
-  ['Rosemary Mint Exfoliating Sugar Scrub', '$18', 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80'],
-  ['Sensitive Skin Exfoliating Sugar Scrub', '$18', 'https://images.unsplash.com/photo-1619451427882-6aaaded0cc61?auto=format&fit=crop&w=800&q=80'],
+  ['Brown Sugar Coffee Exfoliating Sugar Scrub', '$18', brownSugarCoffeeScrub],
+  ['Caribbean Coconut Exfoliating Sugar Scrub', '$18', caribbeanCoconutScrub],
+  ['Lavender Exfoliating Sugar Scrub', '$18', lavenderScrub],
+  ['Mango Grapefruit Exfoliating Sugar Scrub', '$18', mangoGrapefruitScrub],
+  ['PFB Vanish', '$28', pfbVanish],
+  ['PFB Vanish + Chromabright', '$32', pfbVanishChromabright],
+  ['Rosemary Mint Exfoliating Sugar Scrub', '$18', rosemaryMintScrub],
+  ['Sensitive Skin Exfoliating Sugar Scrub', '$18', sensitiveSkinScrub],
 ];
 
 const routes = {
