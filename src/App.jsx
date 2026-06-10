@@ -511,10 +511,13 @@ function ServicesPage() {
         text="Sugaring paste is applied at room temperature, adheres to hair rather than live skin and can remove very short hairs."
         image="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1800&q=80"
       />
-      <Section title="Introduction to Sugaring">
-        <p className="lead">Each sugaring appointment includes thoughtful details such as a hot towel, aromatherapy and massage after treatment. All equipment is sterilized and the experience is designed around comfort and visible results.</p>
+      <Section eyebrow="Sugaring" title="Introduction to Sugaring" className="services-intro-section">
+        <div className="about-panel services-intro-panel">
+          <SpaIcon type="leaf" />
+          <p className="lead">Each sugaring appointment includes thoughtful details such as a hot towel, aromatherapy and massage after treatment. All equipment is sterilized and the experience is designed around comfort and visible results.</p>
+        </div>
       </Section>
-      <Section title="Service Menu" className="soft">
+      <Section eyebrow="Service Menu" title="Choose your treatment" className="services-menu-section soft">
         <div className="service-list">
           {detailedServices.map(([name, summary]) => (
             <article className="service-row" key={name}>
@@ -525,15 +528,16 @@ function ServicesPage() {
                   <p>{summary}</p>
                 </div>
               </div>
-              <div>
-                <BookButton />
-              </div>
+              <BookButton />
             </article>
           ))}
         </div>
       </Section>
-      <Section title="Hard Waxing">
-        <p>Hard wax removes hair at the root, leaving skin smooth. It is applied warm and removed without strips. Different formulas are selected for Brazilian waxing versus delicate facial areas, so each service is tailored to the skin and body area.</p>
+      <Section eyebrow="Waxing Options" title="Hard Waxing" className="services-hard-section">
+        <div className="about-panel services-hard-panel">
+          <SpaIcon type="wax" />
+          <p className="lead">Hard wax removes hair at the root, leaving skin smooth. It is applied warm and removed without strips. Different formulas are selected for Brazilian waxing versus delicate facial areas, so each service is tailored to the skin and body area.</p>
+        </div>
       </Section>
       <ClosingCTA text="Schedule your sugaring appointment today. We have locations in St. Petersburg, FL, and Tampa, FL." />
     </>
