@@ -66,14 +66,108 @@ const detailedServices = [
 ];
 
 const products = [
-  ['Brown Sugar Coffee Exfoliating Sugar Scrub', '$18', brownSugarCoffeeScrub],
-  ['Caribbean Coconut Exfoliating Sugar Scrub', '$18', caribbeanCoconutScrub],
-  ['Lavender Exfoliating Sugar Scrub', '$18', lavenderScrub],
-  ['Mango Grapefruit Exfoliating Sugar Scrub', '$18', mangoGrapefruitScrub],
-  ['PFB Vanish', '$28', pfbVanish],
-  ['PFB Vanish + Chromabright', '$32', pfbVanishChromabright],
-  ['Rosemary Mint Exfoliating Sugar Scrub', '$18', rosemaryMintScrub],
-  ['Sensitive Skin Exfoliating Sugar Scrub', '$18', sensitiveSkinScrub],
+  {
+    slug: 'brown-sugar-coffee-exfoliating-sugar-scrub',
+    name: 'Brown Sugar Coffee Exfoliating Sugar Scrub',
+    price: '$18.00',
+    image: brownSugarCoffeeScrub,
+    subtitle: 'Fragrance With Purpose - Brown Sugar Coffee',
+    description: [
+      "Our Brown Sugar Coffee not only smells like a coffee lovers dream come true, it's also made with real coffee to provide a highly effective cellulite busting scrub.",
+    ],
+    usage: "Our sugar scrubs are meant for the body, not the face. After you open your scrub, stir it well with the cute mini spoon in your shipment. Apply to wet skin in the shower, scrub until the sugar dissolves, and rinse. Or use on dry skin for extra exfoliation. Be sure to rinse well. If you have a few extra minutes, nix the towel and let your skin dry naturally to let those oils really soak in. Be careful - your shower may get slippery. If you experience any skin redness or irritation, please discontinue use or use less pressure when scrubbing.",
+    ingredients: 'Sugar, coconut oil, sweet almond oil, avocado oil, coffee, molasses, natural fragrance, vitamin e oil.',
+  },
+  {
+    slug: 'caribbean-coconut-exfoliating-sugar-scrub',
+    name: 'Caribbean Coconut Exfoliating Sugar Scrub',
+    price: '$18.00',
+    image: caribbeanCoconutScrub,
+    subtitle: 'Fragrance With Purpose - Caribbean Coconut',
+    description: [
+      'Caribbean Coconut smells like an island vacation.',
+    ],
+    usage: "Our sugar scrubs are meant for the body, not the face. After you open your scrub, stir it well with the cute mini spoon in your shipment. Apply to wet skin in the shower, scrub until the sugar dissolves, and rinse. Or use on dry skin for extra exfoliation. Be sure to rinse well. If you have a few extra minutes, nix the towel and let your skin dry naturally to let those oils really soak in. Be careful - your shower may get slippery. If you experience any skin redness or irritation, please discontinue use or use less pressure when scrubbing.",
+    ingredients: 'Sugar, coconut oil, sweet almond oil, avocado oil, natural fragrance, vitamin e oil.',
+  },
+  {
+    slug: 'lavender-exfoliating-sugar-scrub',
+    name: 'Lavender Exfoliating Sugar Scrub',
+    price: '$18.00',
+    image: lavenderScrub,
+    subtitle: 'Fragrance With Purpose - Lavender',
+    description: [
+      'Essential oils smell great and support a calm, elevated body care ritual.',
+      'Scrub Me Good Premium Sugar Scrubs are the perfect way to get glowing, beautiful skin. This sugar scrub removes dead skin cells, stimulates collagen production, helps prevent ingrown hairs after waxing and shaving, and moisturizes your skin in one easy step. These sugar scrubs are ideal for all skin types, especially sensitive skin, and gentle enough to use daily.',
+    ],
+    ingredients: 'Sugar, coconut oil, sweet almond oil, avocado oil, lavender essential oil, vitamin e oil.',
+  },
+  {
+    slug: 'mango-grapefruit-exfoliating-sugar-scrub',
+    name: 'Mango Grapefruit Exfoliating Sugar Scrub',
+    price: '$18.00',
+    image: mangoGrapefruitScrub,
+    subtitle: 'Fragrance With Purpose - Mango Grapefruit',
+    description: [
+      "Mango Grapefruit smells like a dream. This is our best-selling fragrance year round, with fruity, light and tropical goodness.",
+    ],
+    usage: "Our sugar scrubs are meant for the body, not the face. After you open your scrub, stir it well with the cute mini spoon in your shipment. Apply to wet skin in the shower, scrub until the sugar dissolves, and rinse. Or use on dry skin for extra exfoliation. Be sure to rinse well. If you have a few extra minutes, nix the towel and let your skin dry naturally to let those oils really soak in. Be careful - your shower may get slippery. If you experience any skin redness or irritation, please discontinue use or use less pressure when scrubbing.",
+    ingredients: 'Sugar, coconut oil, sweet almond oil, avocado oil, natural fragrance, vitamin e oil.',
+  },
+  {
+    slug: 'pfb-vanish',
+    name: 'PFB Vanish',
+    price: '$28.00',
+    image: pfbVanish,
+    subtitle: 'The first line of defense for ingrown hair',
+    description: [
+      'PFB Vanish is a unique, cosmetically elegant roll-on gel formulated for ingrown hairs, razor burn and bumps resulting from shaving, waxing, tweezing, electrolysis and laser hair removal. Say goodbye to ingrown hairs.',
+    ],
+    directions: 'Use on face, neck, underarms, legs, back and bikini areas. For maximum benefits apply daily after hair removal. If there are pre-existing ingrown hairs, apply two times per day. Hair should lift out above the skin line.',
+    warning: 'Do not use any type of chemical exfoliants, scrubs or harsh soaps in conjunction when using PFB Vanish or PFB Vanish + Chromabright.',
+  },
+  {
+    slug: 'pfb-vanish-chromabright',
+    name: 'PFB Vanish + Chromabright',
+    price: '$32.00',
+    image: pfbVanishChromabright,
+    subtitle: 'Two products in one: skin lightener and bump fighter',
+    description: [
+      'PFB Vanish + Chromabright is a post-inflammatory hyperpigmentation product designed to help fight bumps while supporting the look of more even skin tone.',
+      'Perfect for dark spots on inner thighs, bikini area, underarms, chin, nape of neck and acne-prone areas. Suitable for all ethnic skin types, it is the only lightening and ingrown hair roll-on on the market, with skin lightening results in 6-8 weeks.',
+    ],
+    highlights: [
+      'Skin lightener and bump fighter in one roll-on.',
+      'Designed for dark spots in intimate and high-friction areas.',
+      'Supports ingrown hair care after hair removal.',
+      'Results may be visible in 6-8 weeks.',
+    ],
+    warning: 'Do not use any type of chemical exfoliants, scrubs or harsh soaps in conjunction when using PFB Vanish or PFB Vanish + Chromabright.',
+  },
+  {
+    slug: 'rosemary-mint-exfoliating-sugar-scrub',
+    name: 'Rosemary Mint Exfoliating Sugar Scrub',
+    price: '$18.00',
+    image: rosemaryMintScrub,
+    subtitle: 'Fragrance With Purpose',
+    description: [
+      'Essential oils smell great and support a polished self-care experience.',
+      'Rosemary has been found to improve brain function and increase attentiveness and alertness. Peppermint has microbial properties and a fresh cooling effect that can help soothe itching and cool you down after a heated workout. Rosemary Mint Exfoliating Sugar Scrub is a refreshing pick me up in the morning or any time of the day.',
+    ],
+    ingredients: 'Sugar, coconut oil, sweet almond oil, avocado oil, rosemary essential oil, peppermint essential oil, vitamin e oil.',
+  },
+  {
+    slug: 'sensitive-skin-exfoliating-sugar-scrub',
+    name: 'Sensitive Skin Exfoliating Sugar Scrub',
+    price: '$18.00',
+    image: sensitiveSkinScrub,
+    subtitle: 'Fragrance With Purpose',
+    description: [
+      "Our Sensitive Skin formula has no added fragrance, though it is not completely scent free because it carries the light aroma of virgin coconut oil. Simple, pure ingredients mean less chance of skin irritation.",
+    ],
+    usage: "Our sugar scrubs are meant for the body, not the face. After you open your scrub, stir it well with the cute mini spoon in your shipment. Apply to wet skin in the shower, scrub until the sugar dissolves, and rinse. Or use on dry skin for extra exfoliation. Be sure to rinse well. If you have a few extra minutes, nix the towel and let your skin dry naturally to let those oils really soak in. Be careful - your shower may get slippery. If you experience any skin redness or irritation, please discontinue use or use less pressure when scrubbing.",
+    ingredients: 'Sugar, virgin coconut oil, sweet almond oil, avocado oil, vitamin e oil.',
+  },
 ];
 
 const routes = {
@@ -93,6 +187,9 @@ const routes = {
 
 function getRoute() {
   const route = window.location.hash.replace('#/', '') || 'home';
+  if (route.startsWith('products/') && products.some(product => route === `products/${product.slug}`)) {
+    return route;
+  }
   return routes[route] ? route : 'home';
 }
 
@@ -170,7 +267,8 @@ function App() {
     return () => window.removeEventListener('hashchange', handler);
   }, []);
 
-  const Page = useMemo(() => ({
+  const product = useMemo(() => products.find(item => route === `products/${item.slug}`), [route]);
+  const Page = useMemo(() => product ? null : ({
     home: HomePage,
     about: AboutPage,
     services: ServicesPage,
@@ -183,7 +281,7 @@ function App() {
     careers: CareersPage,
     privacy: PrivacyPage,
     terms: TermsPage,
-  }[route] || HomePage), [route]);
+  }[route] || HomePage), [product, route]);
 
   return (
     <>
@@ -211,7 +309,7 @@ function App() {
         </nav>
       </header>
       <main>
-        <Page />
+        {product ? <ProductDetailPage product={product} /> : <Page />}
       </main>
       <Footer />
       <BackToTop />
@@ -688,19 +786,89 @@ function ProductsPage() {
           </select>
         </div>
         <div className="product-grid">
-          {products.map(([name, price, image]) => (
-            <article className="product-card" key={name}>
-              <img src={image} alt={name} />
+          {products.map(product => (
+            <article className="product-card" key={product.slug}>
+              <img src={product.image} alt={product.name} />
               <div>
                 <span className="category">Beauty Products</span>
-                <h3>{name}</h3>
+                <h3>{product.name}</h3>
                 <p className="rating">★★★★★</p>
-                <p className="price">{price}</p>
+                <p className="price">{product.price}</p>
                 <p>Product available in store.</p>
-                <BookButton>Add to cart</BookButton>
+                <HashButton route={`products/${product.slug}`}>View Details</HashButton>
               </div>
             </article>
           ))}
+        </div>
+      </Section>
+      <ContactCTA />
+    </>
+  );
+}
+
+function ProductDetailPage({ product }) {
+  return (
+    <>
+      <section className="product-detail-hero">
+        <div className="product-detail-media">
+          <img src={product.image} alt={product.name} />
+        </div>
+        <div className="product-detail-summary">
+          <span className="eyebrow">Beauty Products</span>
+          <h1>{product.name}</h1>
+          <p className="product-detail-price">{product.price}</p>
+          <div className="product-meta">
+            <span>Product available in store</span>
+            <span>Category: Beauty Products</span>
+          </div>
+          <p className="lead">{product.subtitle}</p>
+          <div className="button-row">
+            <HashButton route="products" variant="outline">Back to Products</HashButton>
+            <BookButton>Book a Visit</BookButton>
+          </div>
+        </div>
+      </section>
+
+      <Section eyebrow="Description" title={product.subtitle} className="product-detail-section">
+        <div className="product-detail-grid">
+          <div className="about-panel product-copy">
+            {product.description.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+            {product.usage && (
+              <>
+                <h3>How Do I Use It?</h3>
+                <p>{product.usage}</p>
+              </>
+            )}
+            {product.directions && (
+              <>
+                <h3>Directions</h3>
+                <p>{product.directions}</p>
+              </>
+            )}
+            {product.ingredients && (
+              <>
+                <h3>Ingredients</h3>
+                <p>{product.ingredients}</p>
+              </>
+            )}
+            {product.warning && (
+              <div className="product-warning">
+                <strong>Important:</strong>
+                <p>{product.warning}</p>
+              </div>
+            )}
+          </div>
+
+          <aside className="product-side-panel">
+            <SpaIcon type={product.name.includes('PFB') ? 'sparkle' : 'leaf'} />
+            <h3>Premium aftercare</h3>
+            <p>Selected to complement smoother skin between appointments and elevate your body care routine.</p>
+            {product.highlights && (
+              <ul>
+                {product.highlights.map(item => <li key={item}>{item}</li>)}
+              </ul>
+            )}
+          </aside>
         </div>
       </Section>
       <ContactCTA />
