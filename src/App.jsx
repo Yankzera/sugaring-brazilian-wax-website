@@ -17,6 +17,8 @@ import sensitiveSkinScrub from './assets/SENSITIVE SKIN EXFOLIATING SUGAR SCRUB.
 const BOOKING_URL = 'https://sbwax.zenoti.com/webstoreNew/services';
 const INSTAGRAM_URL = 'https://www.instagram.com/sugaringbrazilianwax/';
 const EMAIL = 'info@sugaringbrazilianwax.com';
+const SITE_URL = 'https://sugaringbrazilianwax.com';
+const DEFAULT_SEO_DESCRIPTION = 'Book natural sugaring, waxing, vajacials, body sculpting massage and skin care products in Tampa and St. Petersburg, FL.';
 
 const locations = [
   {
@@ -185,6 +187,207 @@ const routes = {
   terms: { label: 'Terms of Service', title: 'Terms of Service' },
 };
 
+const routeSeo = {
+  home: {
+    title: 'Sugaring Brazilian Wax | Sugaring, Waxing & Skin Care in FL',
+    description: DEFAULT_SEO_DESCRIPTION,
+  },
+  about: {
+    title: 'About Sugaring Brazilian Wax | Tampa & St. Petersburg Spa',
+    description: 'Learn about Sugaring Brazilian Wax, a professional spa offering natural sugaring, waxing and client-focused skin care in Tampa and St. Petersburg, FL.',
+  },
+  services: {
+    title: 'Sugaring & Waxing Services | Sugaring Brazilian Wax',
+    description: 'Explore sugaring, hard waxing, vajacials, high frequency treatments, hydrojelly masks and specialty hair removal services in Florida.',
+  },
+  'body-sculpting': {
+    title: 'Body Sculpting Massage | Sugaring Brazilian Wax',
+    description: 'Book body sculpting massage designed to support circulation, contouring, lymphatic flow and wellness in St. Petersburg, FL.',
+  },
+  'lymphatic-drainage': {
+    title: 'Lymphatic Drainage Massage | Sugaring Brazilian Wax',
+    description: 'Rejuvenating lymphatic drainage massage for fluid retention, circulation support and skin wellness in St. Petersburg, FL.',
+  },
+  'eyebrow-lamination': {
+    title: 'Eyebrow Lamination in Tampa, FL | Sugaring Brazilian Wax',
+    description: 'Professional eyebrow lamination in Tampa, FL, with personalized brow shaping and gentle spa care.',
+  },
+  vajacial: {
+    title: 'Vajacial Treatment in Tampa & St. Petersburg | Sugaring Brazilian Wax',
+    description: 'Soothe delicate skin, help prevent ingrown hairs and support post-wax care with a professional vajacial treatment.',
+  },
+  products: {
+    title: 'Beauty Products & Waxing Aftercare | Sugaring Brazilian Wax',
+    description: 'Shop in-store exfoliating sugar scrubs, PFB Vanish and aftercare products for smoother skin between waxing appointments.',
+  },
+  locations: {
+    title: 'Locations in Tampa & St. Petersburg | Sugaring Brazilian Wax',
+    description: 'Visit Sugaring Brazilian Wax in Tampa or St. Petersburg, FL. Find addresses, hours, phone numbers and booking information.',
+  },
+  careers: {
+    title: 'Careers | Sugaring Brazilian Wax',
+    description: 'Apply to join the Sugaring Brazilian Wax spa team in Tampa and St. Petersburg, FL.',
+  },
+  privacy: {
+    title: 'Privacy Policy | Sugaring Brazilian Wax',
+    description: 'Read the Sugaring Brazilian Wax privacy policy for website visitors and clients.',
+  },
+  terms: {
+    title: 'Terms of Service | Sugaring Brazilian Wax',
+    description: 'Read the Sugaring Brazilian Wax website terms and conditions.',
+  },
+};
+
+function setHeadTag(selector, createTag, valueAttr, value) {
+  let tag = document.head.querySelector(selector);
+  if (!tag) {
+    tag = createTag();
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute(valueAttr, value);
+}
+
+function setMeta(name, content, attribute = 'name') {
+  setHeadTag(
+    `meta[${attribute}="${name}"]`,
+    () => {
+      const tag = document.createElement('meta');
+      tag.setAttribute(attribute, name);
+      return tag;
+    },
+    'content',
+    content,
+  );
+}
+
+function setLink(rel, href) {
+  setHeadTag(
+    `link[rel="${rel}"]`,
+    () => {
+      const tag = document.createElement('link');
+      tag.setAttribute('rel', rel);
+      return tag;
+    },
+    'href',
+    href,
+  );
+}
+
+function productSeo(product) {
+  const summary = product.description[0];
+  return {
+    title: `${product.name} | Sugaring Brazilian Wax`,
+    description: `${summary} Available in store at Sugaring Brazilian Wax.`,
+  };
+}
+
+function seoForRoute(route, product) {
+  return product ? productSeo(product) : routeSeo[route] || routeSeo.home;
+}
+
+function localBusinessSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BeautySalon',
+    name: 'Sugaring Brazilian Wax',
+    url: SITE_URL,
+    email: EMAIL,
+    sameAs: [INSTAGRAM_URL],
+    image: `${SITE_URL}/logo.png`,
+    priceRange: '$$',
+    areaServed: ['Tampa FL', 'St. Petersburg FL'],
+    department: locations.map(location => ({
+      '@type': 'BeautySalon',
+      name: `Sugaring Brazilian Wax - ${location.name}`,
+      address: location.address,
+      telephone: location.phone,
+      email: EMAIL,
+      openingHours: location.hours,
+    })),
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Sugaring Brazilian Wax Services and Products',
+      itemListElement: [
+        ...serviceCards.map(([name, description]) => ({
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name,
+            description,
+          },
+        })),
+        ...products.map(product => ({
+          '@type': 'Offer',
+          price: product.price.replace('$', ''),
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+          itemOffered: {
+            '@type': 'Product',
+            name: product.name,
+            description: product.description[0],
+            category: 'Beauty Products',
+          },
+        })),
+      ],
+    },
+  };
+}
+
+function productSchema(product) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description[0],
+    image: product.image,
+    category: 'Beauty Products',
+    brand: {
+      '@type': 'Brand',
+      name: 'Sugaring Brazilian Wax',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: product.price.replace('$', ''),
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'BeautySalon',
+        name: 'Sugaring Brazilian Wax',
+      },
+    },
+  };
+}
+
+function updateJsonLd(schema) {
+  let script = document.getElementById('structured-data');
+  if (!script) {
+    script = document.createElement('script');
+    script.id = 'structured-data';
+    script.type = 'application/ld+json';
+    document.head.appendChild(script);
+  }
+  script.textContent = JSON.stringify(schema);
+}
+
+function updateSeo(route, product) {
+  const seo = seoForRoute(route, product);
+  const canonical = SITE_URL;
+  document.title = seo.title;
+  setMeta('description', seo.description);
+  setMeta('robots', 'index, follow');
+  setMeta('og:title', seo.title, 'property');
+  setMeta('og:description', seo.description, 'property');
+  setMeta('og:url', canonical, 'property');
+  setMeta('og:type', product ? 'product' : 'website', 'property');
+  setMeta('og:image', `${SITE_URL}/logo.png`, 'property');
+  setMeta('twitter:card', 'summary');
+  setMeta('twitter:title', seo.title);
+  setMeta('twitter:description', seo.description);
+  setMeta('twitter:image', `${SITE_URL}/logo.png`);
+  setLink('canonical', canonical);
+  updateJsonLd(product ? productSchema(product) : localBusinessSchema());
+}
+
 function getRoute() {
   const route = window.location.hash.replace('#/', '') || 'home';
   if (route.startsWith('products/') && products.some(product => route === `products/${product.slug}`)) {
@@ -282,6 +485,10 @@ function App() {
     privacy: PrivacyPage,
     terms: TermsPage,
   }[route] || HomePage), [product, route]);
+
+  useEffect(() => {
+    updateSeo(route, product);
+  }, [product, route]);
 
   return (
     <>
